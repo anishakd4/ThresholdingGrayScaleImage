@@ -3,8 +3,12 @@ import cv2
 #Read a gray scale image or read a color image in gray scale format
 inputImage = cv2.imread('../assets/putin.jpg', cv2.IMREAD_GRAYSCALE)
 
+#set the threshold and maximum value
+thresh = 100
+maxValue = 255
+
 #Binary thresholding
-th, binaryImage = cv2.threshold(inputImage, 100, 255, cv2.THRESH_BINARY)
+th, binaryImage = cv2.threshold(inputImage, thresh, maxValue, cv2.THRESH_BINARY)
 
 #create windows for displaying images
 cv2.namedWindow("input image", cv2.WINDOW_NORMAL)
